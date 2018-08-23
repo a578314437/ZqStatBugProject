@@ -27,6 +27,7 @@ for(var i=0;i<list.length && list[i];i++)
 { 
    strData +=list[i].value;
    alert(strData);
+   //location.href="stat.jsp?p="+strData;
 }
 </script>
 </body>
