@@ -21,9 +21,9 @@ public class GetFieldCountUilt {
 			
 		}
 		
-		for(Object objkey:map.keySet()) {
-			System.out.println(objkey.toString()+":"+map.get(objkey.toString()));
-		}
+//		for(Object objkey:map.keySet()) {
+//			System.out.println(objkey.toString()+":"+map.get(objkey.toString()));
+//		}
 		return map;
 	}
 	public static void main(String[] args) {

@@ -18,5 +18,16 @@
 <P>
 <INPUT TYPE="submit" VALUE="生成统计结果">
 </FORM>
+<script type="text/javascript">
+//获取表单并付给数组
+var list=document.getElementsByName("stat");
+var strData="";
+//对表单中所有的input进行遍历
+for(var i=0;i<list.length && list[i];i++)
+{ 
+   strData +=list[i].value;
+   alert(strData);
+}
+</script>
 </body>
 </html>
