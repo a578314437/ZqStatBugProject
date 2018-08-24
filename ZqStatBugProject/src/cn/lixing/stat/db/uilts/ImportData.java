@@ -106,8 +106,8 @@ public class ImportData {
 		closePreparedStatement(pmt);
 		closeConnection(connection);
 	}
-//	public static void main(String[] args) {
-//		importData("oracle");
+	public static void main(String[] args) {
+		importData("mysql");
 //		delete("mysql");
-//	}
+	}
 }

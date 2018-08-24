@@ -11,8 +11,6 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
-import com.sun.swing.internal.plaf.basic.resources.basic;
-
 import cn.lixing.stat.db.Object.DataSetObject;
 import static cn.lixing.stat.db.Object.JFreeChartObject.*;
 public class SkipSatServlet extends HttpServlet {
@@ -27,6 +25,8 @@ public class SkipSatServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		dataObject=new DataSetObject();
 		String type = req.getParameter("type");
+		String p=req.getParameter("p");
+		System.out.println(p);
 		if(type.equals("module")||
 		   type.equals("slevel")||
 		   type.equals("priority")||
@@ -37,6 +37,8 @@ public class SkipSatServlet extends HttpServlet {
 			data=dataObject.getPieDataset(type);
 			chart=getPieChar(data, type);
 			ChartUtilities.writeChartAsPNG(resp.getOutputStream(), chart, 800, 600);
+		}else {
+			req.getRequestDispatcher("/stat.jsp").forward(req, resp);
 		}
 	}
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>选择统计的分析结果</h1>
-<FORM ACTION="/ZqStatBugProject/StatServlet" METHOD=POST>
+<FORM  id="fm" ACTION="/ZqStatBugProject/StatServlet" METHOD=POST>
 <INPUT TYPE="radio" NAME="stat" VALUE="module" CHECKED>按模块统计
 <INPUT TYPE="radio" NAME="stat" VALUE="slevel" CHECKED>按严重级别统计
 <INPUT TYPE="radio" NAME="stat" VALUE="priority" CHECKED>按优先级统计
@@ -18,17 +18,23 @@
 <P>
 <INPUT TYPE="submit" VALUE="生成统计结果">
 </FORM>
+<div></div>
+</body>
 <script type="text/javascript">
+document.getElementById('fm').style.display='none';
 //获取表单并付给数组
 var list=document.getElementsByName("stat");
 var strData="";
 //对表单中所有的input进行遍历
 for(var i=0;i<list.length && list[i];i++)
 { 
-   strData +=list[i].value;
-   alert(strData);
-   //location.href="stat.jsp?p="+strData;
+ strData +=list[i].value+",";
+
+ document.getElementsByTagName('div')[0].innerHTML="<a href=stat.jsp?p="+strData+">dfdf</a>";
+ //document.write("<a href=stat.jsp?p="+strData+"></a>")
+ //this.location.href="stat.jsp?p=";
 }
+//alert(strData);
+
 </script>
-</body>
 </html>
