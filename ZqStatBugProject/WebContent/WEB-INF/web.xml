@@ -25,4 +25,23 @@
     <servlet-name>SkipSatServlet</servlet-name>
     <url-pattern>/SkipSatServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SummarizeServlet</servlet-name>
+    <servlet-class>cn.lixing.servlet.object.SummarizeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SummarizeServlet</servlet-name>
+    <url-pattern>/SummarizeServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ResultServlet</servlet-name>
+    <servlet-class>cn.lixing.servlet.object.ResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResultServlet</servlet-name>
+    <url-pattern>/ResultServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

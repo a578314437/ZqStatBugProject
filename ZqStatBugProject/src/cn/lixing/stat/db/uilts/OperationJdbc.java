@@ -42,9 +42,11 @@ public class OperationJdbc {
 	private List<Object>closetimeList;
 	private List<Object>solvertimeList;
 	private String sep;
+	private String isImport;
 	public OperationJdbc() {
 		FieldDataMap=new HashMap<>();
 		sep = System.getProperty("file.separator");
+		isImport=getData("isImportData", sep+"configFile"+sep+"db");
 		dbType=getData("dbType", sep+"configFile"+sep+"db");
 		idList=new ArrayList<>();
 		moduleList=new ArrayList<>();
@@ -62,15 +64,17 @@ public class OperationJdbc {
 		closetimeList=new ArrayList<>();
 		solvertimeList=new ArrayList<>();
 		idList=new ArrayList<>();
-		delete(dbType);
-		importData(dbType);
-		this.select();
+		this.select(isImport);
 	}
 	
-	public void select() {
+	public void select(String b) {
+		if(b.equals("true")) {
+			delete(dbType);
+			importData(dbType);
+		}
 		connection=getConnect(dbType);
 		bugInfoObjects=new ArrayList<>();
-		String sql="select * from zq_bug_info";
+		String sql="select * from zq_bug_info order by creatortime";
 		try {
 			pmt=connection.prepareStatement(sql);
 			resultSet=pmt.executeQuery();
@@ -272,6 +276,6 @@ public class OperationJdbc {
 	}
 	public static void main(String[] args) {
 		OperationJdbc jdbc=new OperationJdbc();
-		jdbc.select();
+		jdbc.select("true");
 	}
 }

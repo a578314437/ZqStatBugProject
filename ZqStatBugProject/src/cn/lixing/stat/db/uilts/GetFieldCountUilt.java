@@ -2,15 +2,14 @@ package cn.lixing.stat.db.uilts;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class GetFieldCountUilt {
-	public static Map<Object, Integer>getFieldCount(List<Object>oldlists){
-		Map<Object, Integer>map=new HashMap<>();
+	public static TreeMap<Object, Integer>getFieldCount(List<Object>oldlists){
+		TreeMap<Object, Integer>map=new TreeMap <>();
 		List<Object>newlists=new ArrayList<>();
 		for(Object list:oldlists) {
 			newlists.add(list+"");
@@ -28,7 +27,7 @@ public class GetFieldCountUilt {
 	}
 	public static void main(String[] args) {
 		OperationJdbc jdbc=new OperationJdbc();
-		getFieldCount(jdbc.getFieldDataMap().get("solver"));
+		getFieldCount(jdbc.getFieldDataMap().get("creatortime"));
 		
 	}
 }
