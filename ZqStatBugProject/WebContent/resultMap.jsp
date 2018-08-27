@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>选择生成的测试结果分析图</h1>
+<hr color="yellow">
 <FORM  id="fm" ACTION="/ZqStatBugProject/StatServlet" METHOD=POST>
 	<INPUT TYPE="radio" NAME="stat" VALUE="module" CHECKED>按模块统计<br/><br/>
 	<INPUT TYPE="radio" NAME="stat" VALUE="slevel" CHECKED>按严重级别统计<br/><br/>
@@ -19,6 +20,8 @@
 	<INPUT TYPE="radio" NAME="stat" VALUE="designatetime" CHECKED>按解决时间bug数量统计<br/><br/>
 	
 	<INPUT TYPE="submit" VALUE="生成统计结果">
+	<hr color="yellow">
 </FORM>
+<a href="index.jsp">返回首页</a>
 </body>
 </html>

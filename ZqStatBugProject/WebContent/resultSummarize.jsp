@@ -7,6 +7,9 @@
 <title>resultSummarize</title>
 </head>
 <body>
+<h1>zq测试结果报告概况</h1>
+<hr color="yellow">
+<h5>bug类型筛选：</h5>
 <form name="frm" action="/ZqStatBugProject/ResultServlet" method="post">
 	<select name="s1" onChange="redirec(document.frm.s1.options.selectedIndex)">
 		<option selected>请选择</option>
@@ -20,6 +23,7 @@
 	</select><br/><br/>
 	<input type="submit" value="筛选">
 </form>
+<hr color="yellow">
 <script language="javascript" >
 	//获取一级菜单长度
 	var select1_len = document.frm.s1.options.length;
