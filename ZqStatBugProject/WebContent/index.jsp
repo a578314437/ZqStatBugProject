@@ -18,6 +18,7 @@
 	<INPUT TYPE="radio" NAME="stat" VALUE="solver" CHECKED>按解决者解决数量统计
 	<INPUT TYPE="radio" NAME="stat" VALUE="creatortime" CHECKED>按创建时间bug数量统计
 	<INPUT TYPE="radio" NAME="stat" VALUE="designatetime" CHECKED>按解决时间bug数量统计
+	<INPUT TYPE="radio" NAME="stat" VALUE="bugtype" CHECKED>按解决时间bug数量统计
 <INPUT TYPE="submit" VALUE="生成统计结果">
 </FORM>
 <div>

@@ -36,10 +36,17 @@
 		
 		select2[1][0] = new Option("已激活", 0);
 		select2[1][1] = new Option("已关闭", 9);
-		select2[1][2] = new Option("已解决", 1);
+		select2[1][2] = new Option("已解决", 10);
 		
-		select2[2][0] = new Option("app模块",1);
-		select2[2][1] = new Option("web模块", 0);
+		select2[2][0] = new Option("业务管理模块",1);
+		select2[2][1] = new Option("码管理模块", 3);
+		select2[2][2] = new Option("权限管理模块",5);
+		select2[2][3] = new Option("web端后台管理系统", 7);
+		
+		select2[2][4] = new Option("客户经理端",2);
+		select2[2][5] = new Option("技术人员端", 4);
+		select2[2][6] = new Option("关键人端",6);
+		select2[2][7] = new Option("装维端", 8);
 		
 		select2[3][0] = new Option("致命bug", 1);
 		select2[3][1] = new Option("严重bug", 2);

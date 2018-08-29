@@ -25,7 +25,28 @@ public class DataSetObject {
 		map=getFieldCount(jdbc.getFieldDataMap().get(keyValus));
 		
 		for(Object objkey:map.keySet()) {
-			pieDataset.setValue((Comparable<?>) objkey, map.get(objkey));
+			if(keyValus.equals("module")) {
+				if(objkey.equals("1")) {
+					pieDataset.setValue("业务管理模块", map.get(objkey));
+				}else if(objkey.equals("3")) {
+					pieDataset.setValue("码管理模块", map.get(objkey));
+				}else if(objkey.equals("5")) {
+					pieDataset.setValue("权限管理模块", map.get(objkey));
+				}else if(objkey.equals("7")) {
+					pieDataset.setValue("web端后台管理系统", map.get(objkey));
+				}else if(objkey.equals("2")) {
+					pieDataset.setValue("客户经理端", map.get(objkey));
+				}else if(objkey.equals("4")) {
+					pieDataset.setValue("技术人员端", map.get(objkey));
+				}else if(objkey.equals("6")) {
+					pieDataset.setValue("关键人端", map.get(objkey));
+				}else if(objkey.equals("8")) {
+					pieDataset.setValue("装维端", map.get(objkey));
+				}
+			}else {
+				pieDataset.setValue((Comparable<?>) objkey, map.get(objkey));
+			}
+			
 		}
 		return pieDataset;
 	}

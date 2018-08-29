@@ -13,6 +13,7 @@ import static cn.lixing.stat.File.uilts.CloseUilt.*;
 
 import static cn.lixing.connection.linux.uilts.LoginLinuxImportData.*;
 import static cn.lixing.stat.File.uilts.PropertiesFileUilt.*;
+import static cn.lixing.stat.File.uilts.ReadFileUilts.*;
 
 public class ImportData {
 	private static Connection connection;
@@ -47,7 +48,8 @@ public class ImportData {
 	}
 	
 	public static void importData(String dbType) {
-		FileName=getData("csvfile", sep+"configFile"+sep+"db");
+		replaceFileData();
+		FileName=getData("importCsvfile", sep+"ConfigFile"+sep+"db");
 		if(dbType.equals("mysql")) {
 			connection=getConnect(dbType);
 			sql="LOAD DATA LOCAL INFILE '"+FileName+"' INTO TABLE `zq_bug_info` CHARACTER\r\n" + 
@@ -107,6 +109,7 @@ public class ImportData {
 		closeConnection(connection);
 	}
 	public static void main(String[] args) {
+		delete("mysql");
 		importData("mysql");
 //		delete("mysql");
 	}
